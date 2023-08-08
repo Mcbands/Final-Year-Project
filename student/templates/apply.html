@@ -1,0 +1,366 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>kerescoachinginstitute/ApplicationForm</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <script src="{% static 'assets/js/color-modes.js' %}"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.111.3">
+    <link rel="canonical" href="{% static 'https://getbootstrap.com/docs/5.3/examples/carousel/' %}">
+    <link href="{% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style>
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+      .carousel slide h1, p, h2{
+        color: black;
+      }
+      .carousel img{
+        opacity: 0.5;;
+      }
+      /* Style the overlay with a semi-transparent dark background color */
+      .faint-dark-overlay {
+        background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value (0.0 - 1.0) to control the darkness */
+        pointer-events: none; /* Allows click events to pass through the overlay to the underlying image */
+      }
+  
+      /* Apply opacity to the image */
+      .faint-dark-overlay bd-placeholder-img {
+        opacity: 0.5; /* Adjust this value to control the level of faintness (0.0 - 1.0) */
+      }
+ 
+    </style> 
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="{% static 'vhttps://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900' %}" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Mamba - v4.8.1
+  * Template URL: https://bootstrapmade.com/mamba-one-page-bootstrap-template-free/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <link href="{% static 'sign-in.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link rel="canonical" href="{% static 'https://getbootstrap.com/docs/5.3/examples/sign-in/' %}">
+</head>
+
+<body>
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope-fill"></i><a href="mailto:contact@example.com">kerescoachinginstitute@gmail.com</a>
+        <i class="bi bi-phone-fill phone-icon"></i> +260 976 080 465
+      </div>
+      <div class="social-links d-none d-md-block">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <div class="logo me-auto">
+        <a href="{% url 'index' %}"><img src="{% static 'assets/img/logoo.png' %}"></a>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="{% url 'index' %}">Home</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'about' %}">About</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'blog' %}">Blog</a></li>
+          
+          <li><a class="nav-link scrollto" href="{% url 'course' %}">Courses</a></li>
+          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li>
+          <li ><a class="nav-link scrollto" href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+ 
+ <!-- ======= Application  Form======= -->
+<main id="main">
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Apply for a course</h2>
+          <p style="text-align: center;">Fill in the form and we will contact you shortly</p>
+        </div>
+        
+<div class="apply-container">
+  <form method="POST" action="{% url 'apply' %}" onsubmit="return validateForm()">
+    {% csrf_token %}
+    <div class="form-columns">
+      <div class="form-column">
+        <div class="form-group">
+          <label for="id_full_name">Full name</label>
+          <input type="text" id="id_full_name" name="full_name" placeholder="Full name" required>
+          {% if form.full_name.errors %}
+            <span class="error">{{ form.full_name.errors }}</span>
+          {% endif %}
+        </div>
+                
+        <div class="form-group">
+          <label for="id_phone_number"></label>
+          <input type="text" id="id_phone_number" name="phone_number" placeholder="+260" pattern="[0-9]+" required>
+        </div>						
+        <div class="form-group">
+          <label for="id_email"></label>
+          <input type="email" id="id_email" name="email" placeholder="Email" required>
+        </div>
+      </div>
+      <div class="form-column">
+        <div class="form-group">
+          <label for="id_address"></label>
+          <input type="text" id="id_address" name="address" placeholder="Address">
+        </div>
+        <div class="form-group">
+          <label for="id_nrc"></label>
+          <input type="text" id="id_nrc" name="nrc" placeholder="NRC Number without a slash" pattern="[0-9]+">
+        </div>
+        <div class="form-group">
+          <label for="id_gender"></label><br>
+          <input type="radio" id="id_gender" name="gender" value="male" checked> Male<br>
+          <input type="radio" id="id_gender" id="id_gender" name="gender" value="female"> Female<br>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="id_desired_program"></label>
+      <select id="id_desired_program" name="desired_program" required>
+        <option disabled selected value><b>Business Sector:</b></option>
+        <option value="Introduction to Business Management">1. Introduction to Business Management</option>
+        <option value="Fundamentals of Accounting">2. Fundamentals of Accounting</option>
+        <option value="Marketing and Sales Management">3. Marketing and Sales Management</option>
+        <option value="Human Resource Management">4. Human Resource Management</option>
+        <option value="Entrepreneurship and Innovation">5. Entrepreneurship and Innovation</option>
+        <option value="Project Management">6. Project Management</option>
+        <option value=" Financial Management">7. Financial Management</option>
+        
+        <option disabled selected value>Technology Sector:</option>
+        <option value="Introduction to Information Technology">1. Introduction to Information Technology</option>
+        <option value="Website Design and Development">2. Website Design and Development</option>
+        <option value="Database Design and Management">3. Database Design and Management</option>
+        <option value="Cybersecurity and Ethical Hacking">4. Cybersecurity and Ethical Hacking</option>
+        <option value="Network Administration and Management">5. Network Administration and Management</option>
+        <option value="Artificial Intelligence and Machine Learning">6. Artificial Intelligence and Machine Learning</option>
+        
+        <option disabled selected value>Creative Arts Sector:</option>
+        <option value="Graphic Designing">1. Graphic Designing</option>
+        <option value="Digital Art and Illustration">2. Digital Art and Illustration</option>
+        <option value="Photography">3. Photography</option>
+        <option value="Film and Television Production">4. Film and Television Production</option>
+        <option value="Animation and Visual Effects">5. Animation and Visual Effects</option>
+        
+        <option disabled selected value>Engineering Sector:</option>
+        <option value="Civil Engineering">1. Civil Engineering</option>
+        <option value="Mechanical Engineering">2. Mechanical Engineering</option>
+        <option value="Electrical Engineering">3. Electrical Engineering</option>
+
+        <option disabled selected value>Select Course of your choice</option>
+      </select>
+    </div>
+  </div><br>
+     <div class="d-flex gap-2 justify-content-center py-5">
+            <a href="{% url 'apply' %}"><button class="btn btn-primary rounded-pill px-3" type="submit">Submit</button></a>
+          </div>
+       
+          <p style="text-align: center;">By submitting thin form you agree to the <a href="{% url 'terms' %}"> Terms of services </a> and the <a href="{% url 'policy' %}"> Privacy policy.</a></p>
+  </form>
+</div>
+
+<div class="container">
+  <p><br><br><br><br><br><br></b></b></p>
+</div>
+<!-- ======= End of Apllication Form======= -->
+</div>
+</section>
+</main>
+  
+
+<!-- ======= Footer ======= -->
+
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <div class="logo me-auto">
+              <a href="{% url 'index' %}"><img src="{% static 'assets/img/logo_footer.png' %}"></a>
+            </div>
+            <p>
+              Barlastone Park,<br>
+              Lusaka,Zambia<br><br>
+              <strong>Phone:</strong> +260 976 080 465<br>
+              <strong>Email:</strong> kerescoachinginstitute@gmail.com
+              <br>
+            </p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'index' %}">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'about' %}">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'contact' %}">Contact us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'terms' %}">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'policy' %}">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Other Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'faq' %}">FAQs</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'blog' %}">Blog</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'admission' %}">Admission</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'careers' %}">Careers</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'course' %}">Courses</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Subscribe for our news updates</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+      <div class="copyright">
+        &copy; 2023 <strong><span>kerescoachinginstitute</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits"> 
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Keres Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+  
+  <!-- bootstrap JS File -->
+  <script src="{% static 'assets/dist/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+
+</html>
