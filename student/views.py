@@ -6,6 +6,7 @@ from django.http import HttpResponseRedirect
 from .forms import *
 
 
+
 # Create your views here.
 def apply(request):
     context={}
@@ -25,7 +26,6 @@ def apply(request):
         
             form.save()
             messages.success(request,"New User Application Alert!!. ")
-            return redirect('index')
     else:
         form = AppForm()
     return render(request, 'apply.html', {'form': form})
@@ -45,7 +45,20 @@ def contact(request):
         
             form.save()
             messages.success(request,"New Contact Alert!!. ")
-            return redirect('index')
+            return redirect('contact')
     else:
         form = ContactForm()
     return render(request, 'contact.html', {'form': form})
+
+
+
+'''def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return JsonResponse({'success': True})
+        return JsonResponse({'success': False})
+    else:
+        form = ContactForm()
+    return render(request, 'contact.html', {'form': form})'''

@@ -16,6 +16,8 @@ urlpatterns = [
     path('careers/', careers, name='careers'),
     path('terms/', terms, name='terms'),
     path('policy/', policy, name='policy'),
+    path('login/', login, name='login'),
+    path('register/', register, name='register'),
     #path('', include('core.urls')),
     path('', include('blog.urls')),
     #path('', include('student.urls')),

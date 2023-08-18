@@ -18,7 +18,10 @@
     <link href="{% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
 
     <style>
-
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
@@ -147,23 +150,7 @@
           <li><a class="nav-link scrollto" href="{% url 'blog' %}">Blog</a></li>
        
           <li><a class="nav-link scrollto" href="{% url 'course' %}">Courses</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
+          <li><a class="nav-link scrollto"  href="{% url 'login' %}">Student</a></li>
           <li ><a class="nav-link scrollto" href="{% url 'contact' %}">Contact</a></li>
           <a href="{% url 'apply' %}"><button class="btn btn-primary rounded-pill px-3" type="button">Apply Now</button></a>
         </ul>
@@ -178,6 +165,15 @@
     <!-- ======= Contact Us Section ======= -->
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
+
+      
+{% for msg in messages %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Thank You</strong> We have received your Message
+  <a href="{% url 'index' %}"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></a>
+</div>
+{% endfor %}
+
         <div class="section-title">
           <h2>Contact Us</h2>
         </div>
@@ -211,7 +207,7 @@
           </div>
 
           <div class="col-lg-12" data-aos="fade-up" data-aos-delay="300">
-            <form method="POST" action="{% url 'contact' %}" onsubmit="return validateForm()">
+            <form id="contact-form" method="POST" action="{% url 'contact' %}">
               {% csrf_token %}
               <div class="row">
                 <div class="col-lg-6 form-group">
@@ -240,9 +236,7 @@
         </div>
       </div>
     </section> <!--End Contact Us Section  -->
-  </main> <!--End #main -->
-
-  
+  </main> <!--End #main --> 
 <!-- ======= Footer ======= -->
 
 <footer id="footer">

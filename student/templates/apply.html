@@ -18,6 +18,33 @@
     <link href="{% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
 
     <style>
+      .popup-container {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      color: white;
+      text-align: center;
+    }
+  
+    .popup-content {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
 
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
@@ -147,23 +174,7 @@
           <li><a class="nav-link scrollto" href="{% url 'blog' %}">Blog</a></li>
           
           <li><a class="nav-link scrollto" href="{% url 'course' %}">Courses</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
+          <li><a class="nav-link scrollto"  href="{% url 'login' %}">Student</a></li>
           <li ><a class="nav-link scrollto" href="{% url 'contact' %}">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -177,18 +188,25 @@
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
 
+        {% for msg in messages %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Application Successful</strong> We will get back to you soon
+  <a href="{% url 'index' %}"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></a>
+</div>
+{% endfor %}
+
         <div class="section-title">
           <h2>Apply for a course</h2>
           <p style="text-align: center;">Fill in the form and we will contact you shortly</p>
         </div>
         
 <div class="apply-container">
-  <form method="POST" action="{% url 'apply' %}" onsubmit="return validateForm()">
+  <form id="applicationForm" method="POST" action="{% url 'apply' %}" onsubmit="submitForm(); return false;">
     {% csrf_token %}
     <div class="form-columns">
       <div class="form-column">
         <div class="form-group">
-          <label for="id_full_name">Full name</label>
+          <label for="id_full_name"></label>
           <input type="text" id="id_full_name" name="full_name" placeholder="Full name" required>
           {% if form.full_name.errors %}
             <span class="error">{{ form.full_name.errors }}</span>
@@ -203,6 +221,12 @@
           <label for="id_email"></label>
           <input type="email" id="id_email" name="email" placeholder="Email" required>
         </div>
+        
+        <div class="form-group">
+          <label for="verifyEmail"></label>
+          <input type="email" id="verifyEmail" name="verifyEmail" required><br>
+        </div>
+
       </div>
       <div class="form-column">
         <div class="form-group">
@@ -271,6 +295,27 @@
 </div>
 </section>
 </main>
+
+<script>
+  document.getElementById('applicationForm').addEventListener('submit', function(event) {
+      var email = document.getElementById('email').value;
+      var verifyEmail = document.getElementById('verifyEmail').value;
+
+      if (email !== verifyEmail) {
+          alert("Email addresses do not match. Please enter them correctly.");
+          event.preventDefault();
+      }
+  });
+</script>
+</body>
+</html>
+Copy and paste this code into an HTML file and open it in a web browser. This code creates a simple application form with the requested fields and basic email verification using JavaScript for front-end validation. It alerts the user if the email addresses they entered do not match. Remember that this example is for educational purposes, and you should implement more robust validation and backend verification in a real-world scenario.
+
+
+
+
+
+
   
 
 <!-- ======= Footer ======= -->

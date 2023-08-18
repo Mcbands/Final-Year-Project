@@ -1,18 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.http import HttpResponseRedirect
+from django.contrib.auth.models import User
 
 #import the form name from forms.py
-from .forms import *
 
 #import the blog post model from blog.models
-from blog.models import post
 
-
-# Create your views here.
-
-def index(request):
-    return render(request, 'index.html')
 
 def about(request):
     return render(request, 'about.html')
@@ -42,29 +36,59 @@ def terms(request):
 def policy(request):
     return render(request, 'policy.html')
 
-'''def apply(request):
-    context={}
+def login(request):
+    return render(request, 'login.html')
+
+def index(request):
+    return render(request, 'index.html')
+
+
+def register(request):
     if request.method == 'POST':
-        form = AppForm(request.POST)
-        if form.is_valid():
-            full_name = form.cleaned_data['full_name']
-            phone_number = form.cleaned_data['phone_number']
-            email = form.cleaned_data['email']
-            address = form.cleaned_data['address']
-            nrc = form.cleaned_data['nrc']
-            gender = form.cleaned_data['gender']
-            desired_program = form.cleaned_data['desired_program']
-
+            username = form.cleaned_data['username']
+            fname = request.POST['fname']
+            lname = request.POST['lname']
+            email = request.POST['email']
+            pass1 = request.POST['pass1']
+            pass2 = request.POST['pass2']
             
-            #myuser = User.objects.create_user(full_name, phone_number, email, address, nrc, gender, desired_program)
-        
-            form.save()
-            messages.success(request,"New User Application Alert!!. ")
-            return redirect('index')
+            myuser = User.objects.create_User(username, email, pass1)
+            myuser.first_name = fname
+            myuser.last_name = lname
+            myuser.save()
+            
+            messages.success(request, ("Registrations Successful"))
+            return redirect('register')
+   
     else:
-        form = AppForm()
-    return render(request, 'apply.html', context)
-    '''
+        form = RegisterForm()
+   
+    return render(request, 'register.html', {'form': form})
 
 
 
+
+'''def signup(request):
+    if request.method == 'POST':
+        form = SignupForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password']
+            
+            if User.objects.filter(username=email).exists():
+                form.add_error('email', 'User with this email already exists.')
+            else:
+                user = User.objects.create_user(username=email, email=email, password=password)
+                user.first_name = name
+                user.save()
+
+                user = authenticate(request, username=email, password=password)
+                login(request, user)
+
+                return redirect('log')
+    else:
+        form = SignupForm()
+    
+    return render(request, 'signup.html', {'form': form})
+'''
